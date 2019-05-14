@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="getresult.js" type="text/javascript">
+    </script>
+</head>
+<body>
+    <div style="width: 80%;height: 500px;margin:auto" id="result_body">
+        <div style="margin-top: 10%;font-size: 30px">
+            恭喜你完成啦测评，测评结果如下
+        </div>
+        <div style="margin-top: 2%; font-size: 25px" id="show_result">
+        </div>
+        <a style="font-size: 40px" href="http://www.zsjch.com/index.html">快来免费预约听课吧</a>
+        <script>
+            var result = window.localStorage.getItem("fraction_count");
+            if (parseFloat(result) >= 15 && parseFloat(result) < 24) {
+                var ele = document.getElementById("show_result");
+                ele.innerHTML = "警钟己经敲响了！您孩子的注意力急待提高！\n" +
+                "\n" +
+                "\n" +
+                "您的孩子是不是经常觉得在看电视或者玩游戏的时候注意力很集中，而一到上课或者做作业的时候就不能有效地集中注意力？孩子可能很容易被周围环境所干扰．即使没有干扰的时候也很容易开小差。为此，孩子也很苦恼，但就是管不住自己。\n" +
+                "\n" +
+                "\n" +
+                "其实，有这种情况也不要紧，每个人的注意力都是可以通过训练得到提高的。只要父母和孩子按照科学的方法坚持训练，这种情况是会得到改善的。千万别错过3-10岁培养专注力的黄金期，不然，孩子小时候不能专心学习，将来工作也会二心二意！\n" +
+                "\n" +
+                "\n" +
+                "5月10日（本周五）19：30，听7年幼儿教育经验的沙沙老师，教您如何提高宝贝的专注力";
+            } else if (parseFloat(result) >= 25 && parseFloat(result) < 34) {
+                var ele = document.getElementById("show_result");
+                ele.innerHTML = "您的孩子的注意力基本上能够维持日常的学习和生活的需要。\n" +
+                "\n" +
+                "\n" +
+                "但是，还有许多事情因为孩子的注意力不够集中而不够完美。如果孩子能再专心一点，也许学习成绩就会提高一大步。如果不是因为上课时容易走神，老师的提问就不会答非所问 … … \n" +
+                "\n" +
+                "\n" +
+                "想结束上面的遗憾吗？只要父母和孩子能够按照科学的注意力方法加强训练，注意力就会越来越好。\n" +
+                "\n" +
+                "\n" +
+                "记得收听本周五晚上19：30的免费讲座【三招教你搞定孩子专注力】哦~\n";
+            } else {
+                var ele = document.getElementById("show_result");
+                ele.innerHTML = "您的孩子的注意力非常棒！\n" +
+                "\n" +
+                "\n" +
+                "孩子能在自己想做的事情上保持相当长的时间和高效的注意力， 他具备一个成为成功人士的潜质。您的孩子是老师眼中学习认真的好学生，是家中父母懂事的好孩子，是同学学习的好榜样。\n" +
+                "\n" +
+                "当然，有效的注意和正确地运用好注意的方法，同样会在孩子以后的学习和生活中起到积用。 \n" +
+                "\n" +
+                "如果您还想让孩子更上一层楼，5月10日（本周五）19：30，听7年幼儿教育经验的沙沙老师，教您如何提高宝贝的专注力";
+            }
+        </script>
+    </div>
+</body>
+</html>
