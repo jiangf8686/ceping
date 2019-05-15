@@ -5,6 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <script>
+        if(window.history.length==1){//判断是第一次从微信菜单进入页面
+            //写入空白历史记录
+            pushHistory();
+        }
+
+        //延时监听
+        setTimeout(function () {
+            //监听物理返回按钮
+            window.addEventListener("popstate", function(e) {
+                var return_=confirm("一大波礼品即将到达，确认离开页面么");
+                if(return_){
+                    WeixinJSBridge.call('closeWindow');
+                }else {
+                    pushHistory();
+                }
+            }, false);
+
+        }, 300);
+        /**
+         * [pushHistory 写入空白历史记录]
+         * @author 邱先生
+         * @copyright 烟火里的尘埃
+         * @version [V1.0版本]
+         * @date 2016-07-30
+         * @return {[type]} [description]
+         */
+        function pushHistory() {
+            var state = {
+                title: "title",
+                url: "#"
+            };
+            window.history.pushState(state, "title", "#");
+        }
+    </script>
 </head>
 <body>
 <h1 class="header">
