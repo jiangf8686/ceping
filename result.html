@@ -16,7 +16,33 @@
         <a style="font-size: 40px" href="http://www.zsjch.com/index.html">快来免费预约听课吧</a>
         <script>
             var result = window.localStorage.getItem("fraction_count");
-            if (parseFloat(result) >= 15 && parseFloat(result) < 24) {
+            var ele = document.getElementById("show_result");
+            var show="";
+            switch (parseInt(result)) {
+                case 0:
+                    show="您的小朋友不太可能有注意力不足多动症。" +
+                        "小朋友的专注力比成年人短暂，也比较活泼好动，无需过分担心。";
+                    break
+                case 1:
+                    show="您的小朋友非常有可能存在注意力不足或注意力缺陷倾向，" +
+                        "如果小朋友持续出现注意力不足或注意力缺陷症状半年以上，" +
+                        "而且症状多于一个场合出现，而且影响学习能力及家长关系，" +
+                        "请联系相关专业机构及人士";
+                    break
+                case 2:
+                    show="您的小朋友非常有可能存在多动冲动倾向，" +
+                        "如果小朋友持续出现多动冲动症状半年以上，" +
+                        "而且症状多于一个场合出现，" +
+                        "而且影响学习能力及家长关系，请联系相关专业机构及人士";
+                    break
+                case 3:
+                    show="您的小朋友非常有可能患有注意力不足多动症，" +
+                        "并会对学习能力或与家长关系造成影响，" +
+                        "请联系相关专业机构及人士";
+                    break
+            }
+            ele.innerHTML=show;
+           /* if (parseFloat(result) >= 15 && parseFloat(result) < 24) {
                 var ele = document.getElementById("show_result");
                 ele.innerHTML = "警钟己经敲响了！您孩子的注意力急待提高！\n" +
                 "\n" +
@@ -50,7 +76,7 @@
                 "当然，有效的注意和正确地运用好注意的方法，同样会在孩子以后的学习和生活中起到积用。 \n" +
                 "\n" +
                 "如果您还想让孩子更上一层楼，5月10日（本周五）19：30，听7年幼儿教育经验的沙沙老师，教您如何提高宝贝的专注力";
-            }
+            }*/
         </script>
     </div>
 </body>
