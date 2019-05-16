@@ -29,8 +29,8 @@ function submitvote(event) {
             }
         }
     }
-    alert("count_1_9="+count_1_9);
-    alert("count_10_18="+count_10_18);
+    /*alert("count_1_9="+count_1_9);
+    alert("count_10_18="+count_10_18);*/
     if(count_1_9<6 && count_10_18<6){
         fraction_count=0;//
     }else if(count_1_9>=6&&count_10_18<6){
